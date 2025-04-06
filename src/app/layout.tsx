@@ -1,3 +1,6 @@
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 import { type Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -39,6 +42,9 @@ export default function RootLayout({
           >
             {children}
           </ThemeProvider>
+
+          <SpeedInsights />
+          <Analytics />
         </body>
       </html>
     </ClerkProvider>

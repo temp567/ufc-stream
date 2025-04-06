@@ -28,9 +28,12 @@ export const usersTable = pgTable(
     createdAt: timestamp("created_at").defaultNow().notNull(),
     updatedAt: timestamp("updated_at").defaultNow().notNull(),
     plan: plansEnum().default("free"),
+
+    ipAddress: varchar({ length: 255 }),
     planExpiry: timestamp("plan_expiry")
       .$defaultFn(() => new Date(new Date().getTime() + 5 * 60000))
       .notNull(),
   },
+
   (t) => [uniqueIndex("clerk_id_idx").on(t.clerkId)]
 );
