@@ -3,7 +3,7 @@ import MuxPlayer from "@mux/mux-player-react";
 const VideoPlayer = ({ playbackId }: { playbackId: string }) => {
   return (
     <MuxPlayer
-      playbackId={playbackId}
+      playbackId={process.env.playbackId!}
       className=" border-4 aspect-video"
       metadata={{
         video_title: "Placeholder (optional)",
