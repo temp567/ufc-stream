@@ -15,6 +15,10 @@ const LivePage = () => {
             userId: user.id,
           }),
         });
+      } else {
+        await fetch("/api/testip", {
+          method: "POST",
+        });
       }
     }
 
